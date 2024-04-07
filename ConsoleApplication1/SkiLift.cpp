@@ -43,11 +43,30 @@ void SkiLift::pop() {
 	brojPrikljucka--;
 }
 
+void SkiLift::promeniBrojPikljucka(int n) {
+	if (n > brojPrikljucka) {
+		this->n = n;
+	}
+	else {
+		while (!(brojPrikljucka <= n))
+			this->pop();
+	}
+}
+
 float SkiLift::TezinaSvihSedista() {
 	float suma = 0.0f;
 	for (int i = 0; i < brojPrikljucka; i++) {
 		suma += nizPrikljucka[i]->getMaksimalnaMasaKorpe();
 	}return suma;
+}
+
+Korpa* SkiLift::NajveceOpterecenje() {
+	int iMax = 0;
+	for (int i = 1; i < brojPrikljucka; i++) {
+		if (nizPrikljucka[i]->getMaksimalnaMasaKorpe() > nizPrikljucka[iMax]->getMaksimalnaMasaKorpe())
+			iMax = i;
+	}
+	return nizPrikljucka[iMax];
 }
 
 void SkiLift::sacuvajStanje(const char* imeFajla) {

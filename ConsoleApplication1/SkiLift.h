@@ -9,6 +9,7 @@ public:
 	~SkiLift();
 	void add(Korpa* p);
 	void pop();
+	void promeniBrojPikljucka(int n);
 	float TezinaSvihSedista();
 	Korpa* NajveceOpterecenje();
 	void sacuvajStanje(const char* imeFajla);
