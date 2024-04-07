@@ -12,9 +12,9 @@ float Cetvorosed::trenutnaTezina() {
 }
 
 Cetvorosed::Cetvorosed()
-	:Sedista() {
+	:Korpa() {
 }
 
-Cetvorosed::Cetvorosed(Korpa& k)
-	:Sedista(4,k) {
+Cetvorosed::Cetvorosed(float maxKilaza)
+	:Korpa(maxKilaza,4){
 }

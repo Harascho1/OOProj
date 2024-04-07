@@ -6,6 +6,8 @@ public:
 	Skijas(const Skijas& s);
 	~Skijas();
 	inline float getTezinaSkijasa() { return tezinaSkijasa; }
+
+	Skijas& operator=(const Skijas& s);
 private:
 	int idSkijasa;
 	float tezinaSkijasa;

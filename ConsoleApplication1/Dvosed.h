@@ -1,10 +1,9 @@
 #pragma once
 #include "Korpa.h"
-#include "Sedista.h"
-class Dvosed : public Sedista{
+class Dvosed : public Korpa{
 public:
 	Dvosed();
-	Dvosed(Korpa& k);
+	Dvosed(float maxKilaza);
 	inline int getBroj() { return 2; }
 	float trenutnaTezina();
 };

@@ -1,14 +1,13 @@
 #pragma once
 #include "Korpa.h"
-#include "Sedista.h"
 
-class Cetvorosed : public Sedista{
+class Cetvorosed : public Korpa{
 	
 public:
 	float trenutnaTezina();
 	inline int getBroj() { return 4; }
 	Cetvorosed();
-	Cetvorosed(Korpa& k);
+	Cetvorosed(float maxKilaza);
 private:
 	
 };

@@ -122,18 +122,33 @@ int main()
         SP.add(sl1);
         SP.add(sl2);
 
-        Korpa* k1 = new Korpa(120);
-        Korpa* k2 = new Korpa(150);
+        Korpa* k1 = new Cetvorosed(120);
+        Korpa* k2 = new Dvosed(150);
 
 
-        Sedista* cs1 = new Cetvorosed(*k1);
+        //korpa je nadklasa cetvoreseda i dvoseda
+
+        //maksKilaza, brojMesta = 4, brojPopunjenih, skijasi* s
+
+
+        /*Sedista* cs1 = new Cetvorosed(*k1);
         Sedista* ds1 = new Dvosed(*k2);
         Skijas* s1 = new Skijas(23, 80);
+        Skijas* s2 = new Skijas(14, 100);
         cs1->sit(*s1);
+        Sedista* cs2 = new Cetvorosed(*k2);*/
+        sl1->add(cs1);
         sl1->add(cs1);
         sl2->add(ds1);
+        sl1->pop();
+        *s1 = *s2;
+        Sedista* s = new Sedista();
         cout << "Trenutno se nalazite u" << endl;
         cout << SP;
+        sl1->sacuvajStanje("trenutnoStanje.txt");
+
+        
+
         bool kraj = false;
     }
 

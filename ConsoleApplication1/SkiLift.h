@@ -11,7 +11,6 @@ public:
 	void pop();
 	float TezinaSvihSedista();
 	Sedista* NajveceOpterecenje();
-
 	void sacuvajStanje(const char* imeFajla);
 
 
@@ -26,6 +25,7 @@ private:
 	int n;
 	void zauzmi(int n);
 	void oslobodi();
+	
 
 };
 

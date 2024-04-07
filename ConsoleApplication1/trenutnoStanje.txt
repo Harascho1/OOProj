@@ -1,7 +1,4 @@
-SkiLift B
-2
-Svaka korpa je maksimalne tezinie: 150
-
-2
+SkiLift A
+4
 Svaka korpa je maksimalne tezinie: 120
 
