@@ -5,8 +5,6 @@
 #include "SkiLift.h"
 #include "Cetvorosed.h"
 #include "Dvosed.h"
-#include "Prikljucak.h"
-#include "Sedista.h"
 #include "Skijas.h"
 
 using namespace std;
@@ -122,8 +120,25 @@ int main()
         SP.add(sl1);
         SP.add(sl2);
 
-        Korpa* k1 = new Cetvorosed(120);
-        Korpa* k2 = new Dvosed(150);
+        Korpa* k1 = new Cetvorosed(400);
+        Korpa* k2 = new Dvosed(300);
+        sl1->add(k2);
+        sl2->add(k1);
+        Skijas* s1 = new Skijas(23, 80);
+        Skijas* s2 = new Skijas(14, 100);
+        Skijas* s3 = new Skijas(17, 50);
+        Skijas* s4 = new Skijas(13, 80.2);
+        Skijas* s5 = new Skijas(7, 79);
+
+        k2->sit(*s1);
+        k2->sit(*s2);
+        k1->sit(*s3);
+        k1->sit(*s4);
+        k1->sit(*s5);
+
+        cout << sl1->TezinaSvihSedista() << endl;
+
+        cout << SP << endl;
 
 
         //korpa je nadklasa cetvoreseda i dvoseda
@@ -136,7 +151,7 @@ int main()
         Skijas* s1 = new Skijas(23, 80);
         Skijas* s2 = new Skijas(14, 100);
         cs1->sit(*s1);
-        Sedista* cs2 = new Cetvorosed(*k2);*/
+        Sedista* cs2 = new Cetvorosed(*k2);
         sl1->add(cs1);
         sl1->add(cs1);
         sl2->add(ds1);
@@ -145,7 +160,7 @@ int main()
         Sedista* s = new Sedista();
         cout << "Trenutno se nalazite u" << endl;
         cout << SP;
-        sl1->sacuvajStanje("trenutnoStanje.txt");
+        sl1->sacuvajStanje("trenutnoStanje.txt");*/
 
         
 

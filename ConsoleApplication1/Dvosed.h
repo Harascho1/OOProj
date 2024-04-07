@@ -6,5 +6,6 @@ public:
 	Dvosed(float maxKilaza);
 	inline int getBroj() { return 2; }
 	float trenutnaTezina();
+	void print(std::ostream& out);
 };
 

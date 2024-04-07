@@ -23,3 +23,7 @@ Skijas& Skijas::operator=(const Skijas& s) {
 	this->tezinaSkijasa = s.tezinaSkijasa;
 	return *this;
 }
+
+std::ostream& operator<<(std::ostream& out, Skijas& s) {
+	return out <<"SkiPass skijasa je: " << s.idSkijasa;
+}

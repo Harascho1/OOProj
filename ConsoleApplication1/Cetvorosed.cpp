@@ -1,16 +1,5 @@
 #include "Cetvorosed.h"
 
-float Cetvorosed::trenutnaTezina() {
-	float suma = 0;
-	for (int i = 0; i < 4; i++) {
-		if (nizKorpi[i]) {
-			suma += nizKorpi[i]->getOpterecenje();
-		}
-	}
-	return suma;
-	
-}
-
 Cetvorosed::Cetvorosed()
 	:Korpa() {
 }
@@ -18,3 +7,9 @@ Cetvorosed::Cetvorosed()
 Cetvorosed::Cetvorosed(float maxKilaza)
 	:Korpa(maxKilaza,4){
 }
+
+void Cetvorosed::print(std::ostream& out) {
+	Korpa::print(out);
+	out <<"Ova korpa ima opterecenje: " << Korpa::getMaksimalnaMasaKorpe() << std::endl;
+}
+

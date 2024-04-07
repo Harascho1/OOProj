@@ -12,15 +12,17 @@ public:
 	Korpa(float maksimalnaMasa, int brojMesta);
 	Korpa(const Korpa& k);
 	void sit(Skijas& s);
-	inline float getMaksimalnaMasaKorpe() { return maksimalnaMasa; }
-	bool getOpterecenje();
+	inline int getPopunjenaMesta() { return this->popunjenaMesta; }
+	float getMaksimalnaMasaKorpe();
+	bool senzor();
+	virtual void print(std::ostream& out);
 	/*inline bool senzor() { return this->skijas.getTezinaSkijasa() > maksimalnaMasa; }*/
 	~Korpa();
 
 
-	friend std::ostream& operator<<(std::ostream& out, Korpa k);
+	friend std::ostream& operator<<(std::ostream& out, Korpa& k);
 
-private:
+protected:
 	Skijas* skijas;
 	float maksimalnaMasa;
 	int brojMesta;

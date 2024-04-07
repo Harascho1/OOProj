@@ -24,9 +24,6 @@
     <ClCompile Include="SkiLift.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Prikljucak.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Dvosed.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -39,18 +36,12 @@
     <ClCompile Include="Skijas.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Sedista.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Skijaliste.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="SkiLift.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Prikljucak.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Dvosed.h">
@@ -63,9 +54,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Skijas.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Sedista.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

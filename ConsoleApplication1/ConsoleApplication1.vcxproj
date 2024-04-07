@@ -131,8 +131,6 @@
     <ClCompile Include="ConsoleApplication1.cpp" />
     <ClCompile Include="Dvosed.cpp" />
     <ClCompile Include="Korpa.cpp" />
-    <ClCompile Include="Prikljucak.cpp" />
-    <ClCompile Include="Sedista.cpp" />
     <ClCompile Include="Skijaliste.cpp" />
     <ClCompile Include="Skijas.cpp" />
     <ClCompile Include="SkiLift.cpp" />
@@ -141,8 +139,6 @@
     <ClInclude Include="Cetvorosed.h" />
     <ClInclude Include="Dvosed.h" />
     <ClInclude Include="Korpa.h" />
-    <ClInclude Include="Prikljucak.h" />
-    <ClInclude Include="Sedista.h" />
     <ClInclude Include="Skijaliste.h" />
     <ClInclude Include="Skijas.h" />
     <ClInclude Include="SkiLift.h" />

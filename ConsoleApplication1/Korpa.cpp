@@ -19,11 +19,24 @@ void Korpa::sit(Skijas& s) {
 	}
 }
 
+float Korpa::getMaksimalnaMasaKorpe() {
+	float suma = 0.0f;
+	for (int i = 0; i < popunjenaMesta; i++)
+		suma += skijas[i].getTezinaSkijasa();
+	return suma;
+}
+
 bool Korpa::senzor() {
 	float suma = 0.0f;
 	for (int i = 0; i < popunjenaMesta; i++) 
 		suma += skijas[i].getTezinaSkijasa();
-	(suma < maksimalnaMasa) ? true : false;
+	if (suma < maksimalnaMasa)
+		return false;
+	return true;
+}
+
+void Korpa::print(std::ostream& out) {
+	out << "Ova korpa ima "<<brojMesta<< " sedista" << std::endl;
 }
 
 Korpa::~Korpa() {
@@ -34,10 +47,10 @@ void Korpa::zauzmi(float maksimalnaMasa, int brojMesta) {
 	this->brojMesta = brojMesta;
 	this->maksimalnaMasa = maksimalnaMasa;
 	this->popunjenaMesta = 0;
-	skijas[4];
+	skijas = new Skijas[this->brojMesta];
 }
 
-std::ostream& operator<<(std::ostream& out, Korpa k) {
-	out << "Svaka korpa je maksimalne tezinie: ";
-	return out << k.maksimalnaMasa << std::endl;
+std::ostream& operator<<(std::ostream& out,Korpa& k) {
+	k.print(out);
+	return out;
 }
