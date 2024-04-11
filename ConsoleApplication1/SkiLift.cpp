@@ -39,7 +39,7 @@ void SkiLift::add(Korpa* p) {
 }
 
 void SkiLift::pop() {
-	nizPrikljucka[brojPrikljucka - 1] = nullptr;
+	delete nizPrikljucka[brojPrikljucka - 1];
 	brojPrikljucka--;
 }
 
@@ -57,7 +57,7 @@ float SkiLift::TezinaSvihSedista() {
 	float suma = 0.0f;
 	for (int i = 0; i < brojPrikljucka; i++) {
 		suma += nizPrikljucka[i]->getMaksimalnaMasaKorpe();
-	}return suma;
+	} return suma;
 }
 
 Korpa* SkiLift::NajveceOpterecenje() {
@@ -72,6 +72,18 @@ Korpa* SkiLift::NajveceOpterecenje() {
 void SkiLift::sacuvajStanje(const char* imeFajla) {
 	std::ofstream fajl(imeFajla);
 	fajl << *this;
+}
+
+void SkiLift::promeniUkupnoOpterecenje(float kilaza) {
+	while (UkupnoOpterecenje() > kilaza)
+		pop();
+}
+
+float SkiLift::UkupnoOpterecenje() {
+	float ukupno = 0.0f;
+	for (int i = 0; i < brojPrikljucka; i++) {
+		ukupno += nizPrikljucka[i]->getMaksimalnaMasa();
+	} return ukupno;
 }
 
 void SkiLift::zauzmi(int n) {

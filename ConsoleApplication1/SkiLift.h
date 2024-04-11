@@ -1,5 +1,6 @@
 #pragma once
 #include "Korpa.h"
+
 class SkiLift{
 public:
 	
@@ -13,7 +14,8 @@ public:
 	float TezinaSvihSedista();
 	Korpa* NajveceOpterecenje();
 	void sacuvajStanje(const char* imeFajla);
-
+	void promeniUkupnoOpterecenje(float kilaza);
+	float UkupnoOpterecenje();
 
 
 	friend std::ostream& operator<<(std::ostream& out, SkiLift& s);

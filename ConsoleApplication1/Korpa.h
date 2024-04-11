@@ -13,6 +13,7 @@ public:
 	Korpa(const Korpa& k);
 	void sit(Skijas& s);
 	inline int getPopunjenaMesta() { return this->popunjenaMesta; }
+	inline float getMaksimalnaMasa() { return this->maksimalnaMasa; }
 	float getMaksimalnaMasaKorpe();
 	bool senzor();
 	virtual void print(std::ostream& out);
