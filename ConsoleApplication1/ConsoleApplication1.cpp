@@ -113,12 +113,13 @@ int main()
 
     }*/
     {
-        Skijaliste SP("Na Staroj Planini");
+
+        Skijaliste* SP = Skijaliste::getInstance("Na StarojPlanini");
 
         SkiLift* sl1 = new SkiLift("SkiLift A", 2);
         SkiLift* sl2 = new SkiLift("SkiLift B", 4);
-        SP.add(sl1);
-        SP.add(sl2);
+        SP->add(sl1);
+        SP->add(sl2);
 
         Korpa* k1 = new Cetvorosed(400);
         Korpa* k2 = new Dvosed(300);
@@ -152,11 +153,11 @@ int main()
 
         sl2->sacuvajStanje("trenutnoStanje.txt");
 
-        sl2->promeniBrojPikljucka(6);
+        sl2->promeniBrojPikljucka(4);
         cout << sl1->TezinaSvihSedista() << endl;
         Korpa* k = sl2->NajveceOpterecenje();
         cout << *k << std::endl;
-        cout << SP << endl;
+        cout << *SP << endl;
 
 
         //korpa je nadklasa cetvoreseda i dvoseda
@@ -183,6 +184,7 @@ int main()
         
 
         bool kraj = false;
+        delete SP;
     }
-
+    
 }

@@ -1,5 +1,7 @@
 #include "Skijaliste.h"
 
+Skijaliste* Skijaliste::skijaliste = nullptr;
+
 Skijaliste::Skijaliste() {
 	this->n = this->brojSkiLiftova = 0;
 	nazivSkijalista = nullptr;
@@ -14,6 +16,13 @@ Skijaliste::Skijaliste(const char* nazivSkijalista) {
 
 Skijaliste::~Skijaliste() {
 	oslobodi();
+}
+
+Skijaliste* Skijaliste::getInstance(const char* nazivSkijalista) {
+	if (skijaliste == nullptr) {
+		skijaliste = new Skijaliste(nazivSkijalista);
+	}
+	return skijaliste;
 }
 
 void Skijaliste::add(SkiLift* Sl) {

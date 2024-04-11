@@ -10,7 +10,13 @@ Korpa::Korpa(float maksimalnaMasa, int brojMesta) {
 
 Korpa::Korpa(const Korpa& k) {
 	this->maksimalnaMasa = k.maksimalnaMasa;
-	this->brojMesta = brojMesta;
+	this->brojMesta = k.brojMesta;
+	this->popunjenaMesta = k.popunjenaMesta;
+	this->skijas = new Skijas[k.brojMesta];
+	for (int i = 0; i < k.popunjenaMesta; i++) {
+		this->skijas[i] = k.skijas[i];
+	}
+
 }
 
 void Korpa::sit(Skijas& s) {

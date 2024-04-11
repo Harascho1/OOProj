@@ -3,10 +3,10 @@
 class Skijaliste {
 
 public:
-	Skijaliste();
-	Skijaliste(const char* nazivSkijalista);
+	Skijaliste(const Skijaliste& s) = delete;
+	
 	~Skijaliste();
-
+	static Skijaliste* getInstance(const char* nazivSkijalista);
 	void add(SkiLift* Sl);
 
 	friend std::ostream& operator<<(std::ostream& out, Skijaliste& s);
@@ -16,11 +16,10 @@ private:
 	SkiLift** nizSkiLiftova;
 	int brojSkiLiftova;
 	int n;
+	static Skijaliste* skijaliste;
+	Skijaliste();
+	Skijaliste(const char* nazivSkijalista);
 	void zauzmi();
 	void oslobodi();
-
-
-	
-
 };
 

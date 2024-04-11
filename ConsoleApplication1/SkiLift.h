@@ -1,6 +1,6 @@
 #pragma once
 #include "Korpa.h"
-class SkiLift {
+class SkiLift{
 public:
 	
 	SkiLift();
