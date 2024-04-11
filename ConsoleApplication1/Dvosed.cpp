@@ -1,19 +1,16 @@
 #include "Dvosed.h"
 
 Dvosed::Dvosed()
-	: Sedista(){
+	: Korpa(){
 }
 
-Dvosed::Dvosed(Korpa& k) 
-	: Sedista(2,k){
+Dvosed::Dvosed(float maxKilaza) 
+	: Korpa(maxKilaza,2){
 }
 
-float Dvosed::trenutnaTezina() {
-	float suma = 0;
-	for (int i = 0; i < 2; i++) {
-		if (nizKorpi[i]) {
-			suma += nizKorpi[i]->getMaksimalnaMasaKorpe();
-		}
+void Dvosed::print(std::ostream& out) {
+	Korpa::print(out);
+	for (int i = 0; i < popunjenaMesta; i++) {
+		out << skijas[i] <<std::endl;
 	}
-	return suma;
 }

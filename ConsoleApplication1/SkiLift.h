@@ -1,5 +1,5 @@
 #pragma once
-#include "Sedista.h"
+#include "Korpa.h"
 class SkiLift {
 public:
 	
@@ -7,11 +7,11 @@ public:
 	SkiLift(const char* nazivSkiLifta, int ukupanKapacitetZice);
 	SkiLift(const SkiLift& sl);
 	~SkiLift();
-	void add(Sedista* p);
+	void add(Korpa* p);
 	void pop();
+	void promeniBrojPikljucka(int n);
 	float TezinaSvihSedista();
-	Sedista* NajveceOpterecenje();
-
+	Korpa* NajveceOpterecenje();
 	void sacuvajStanje(const char* imeFajla);
 
 
@@ -22,10 +22,11 @@ private:
 	char* tipPrikljucka;
 	char* nazivSkiLifta;
 	int brojPrikljucka = 0;
-	Sedista** nizPrikljucka;
+	Korpa** nizPrikljucka;
 	int n;
 	void zauzmi(int n);
 	void oslobodi();
+	
 
 };
 

@@ -28,7 +28,7 @@ SkiLift::~SkiLift() {
 	oslobodi();
 }
 
-void SkiLift::add(Sedista* p) {
+void SkiLift::add(Korpa* p) {
 	if (brojPrikljucka < n)
 		if (brojPrikljucka != 0) {
 			if(typeid(*p) == typeid(*nizPrikljucka[0]))
@@ -43,14 +43,27 @@ void SkiLift::pop() {
 	brojPrikljucka--;
 }
 
-float SkiLift::TezinaSvihSedista() {
-	return 0.0f;
+void SkiLift::promeniBrojPikljucka(int n) {
+	if (n > brojPrikljucka) {
+		this->n = n;
+	}
+	else {
+		while (!(brojPrikljucka <= n))
+			this->pop();
+	}
 }
 
-Sedista* SkiLift::NajveceOpterecenje() {
+float SkiLift::TezinaSvihSedista() {
+	float suma = 0.0f;
+	for (int i = 0; i < brojPrikljucka; i++) {
+		suma += nizPrikljucka[i]->getMaksimalnaMasaKorpe();
+	}return suma;
+}
+
+Korpa* SkiLift::NajveceOpterecenje() {
 	int iMax = 0;
 	for (int i = 1; i < brojPrikljucka; i++) {
-		if (nizPrikljucka[i]->trenutnaTezina() > nizPrikljucka[iMax]->trenutnaTezina())
+		if (nizPrikljucka[i]->getMaksimalnaMasaKorpe() > nizPrikljucka[iMax]->getMaksimalnaMasaKorpe())
 			iMax = i;
 	}
 	return nizPrikljucka[iMax];
@@ -63,7 +76,7 @@ void SkiLift::sacuvajStanje(const char* imeFajla) {
 
 void SkiLift::zauzmi(int n) {
 	this->n = n;
-	nizPrikljucka = new Sedista*[n];
+	nizPrikljucka = new Korpa*[n];
 	for (int i = 0; i < n; i++) {
 		nizPrikljucka[i] = nullptr;
 	}

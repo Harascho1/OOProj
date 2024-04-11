@@ -1,7 +1,10 @@
 SkiLift B
-2
-Svaka korpa je maksimalne tezinie: 150
-
-2
-Svaka korpa je maksimalne tezinie: 120
-
+Ova korpa ima 2 sedista
+SkiPass skijasa je: 23
+SkiPass skijasa je: 14
+Ova korpa ima 2 sedista
+SkiPass skijasa je: 71
+SkiPass skijasa je: 76
+Ova korpa ima 2 sedista
+SkiPass skijasa je: 72
+SkiPass skijasa je: 78

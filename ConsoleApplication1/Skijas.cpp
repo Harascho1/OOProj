@@ -17,3 +17,13 @@ Skijas::Skijas(const Skijas& s) {
 Skijas::~Skijas() {
 	idSkijasa = tezinaSkijasa = 0;
 }
+
+Skijas& Skijas::operator=(const Skijas& s) {
+	this->idSkijasa = s.idSkijasa;
+	this->tezinaSkijasa = s.tezinaSkijasa;
+	return *this;
+}
+
+std::ostream& operator<<(std::ostream& out, Skijas& s) {
+	return out <<"SkiPass skijasa je: " << s.idSkijasa;
+}
